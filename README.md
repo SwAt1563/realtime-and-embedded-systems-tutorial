@@ -1,6 +1,8 @@
 # realtime-and-embedded-systems-tutorial
 
 
+You can watch the tutorial on [SwAt1563](https://www.youtube.com/playlist?list=PLYgImg3VllLpKDPXtSNBBlqbR39lJ27-S) channel
+
 ## Introduction
 [Arabic] Realtime and Embedded Systems Course #00 - Introduction
 
