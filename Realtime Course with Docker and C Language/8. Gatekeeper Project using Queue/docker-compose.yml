@@ -1,0 +1,29 @@
+
+version: '3.5'
+# to run the project write in console
+# docker-compose -f docker-compose.yml up  --build -d
+# then open the docker desktop application and copy the container id
+# then open git console and write
+# winpty docker exec -it container_id bash
+# to open console
+
+# you should download VNC server and viewer-client
+# the password on VNC Client is: headless
+services:
+  project:
+    command: tail -F anything
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/Project/
+    # VNC connect with container on port 5901
+    # and you can choose any binding port to connect by
+    # to connect on vnc viewer you should write on url
+    # localhost:6001
+    ports:
+      - "6001:5901"
+
+
+
+
