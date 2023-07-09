@@ -1,0 +1,123 @@
+
+PROCESSOR 16F877A
+INCLUDE "P16F877A.INC"	
+
+
+__CONFIG 0x3731
+
+
+
+
+Temp EQU 0x25
+
+
+
+
+; The instructions should start from here
+ORG 0x00
+GOTO init
+
+
+ORG 0x04
+GOTO ISR
+
+
+; The init for our program
+init:
+
+
+BANKSEL ADCON1
+MOVLW b'10000000'
+MOVWF ADCON1
+
+
+BANKSEL TRISA
+BSF TRISA, TRISA0
+
+BANKSEL ADCON0
+MOVLW b'01000001'
+MOVWF ADCON0
+
+BANKSEL ADRESH
+CLRF ADRESH
+BANKSEL ADRESL
+CLRF ADRESL
+
+
+
+
+BANKSEL TRISD
+CLRF TRISD
+
+BANKSEL PORTD
+
+
+
+
+
+
+
+GOTO start
+
+
+; When intruput happend the program will enter here
+ISR:
+
+
+
+
+BANKSEL PORTD
+retfie
+
+
+
+
+
+INCLUDE "LCDIS_PORTD.INC" ; IF U WANT TO USE LCD ON PORT D
+
+
+; The main code for our program
+start:
+
+CALL xms
+CALL xms
+
+
+CALL inid
+
+
+
+BANKSEL ADCON0
+BSF ADCON0, GO
+
+READ:
+BTFSC ADCON0, GO
+GOTO READ
+
+
+BANKSEL ADRESL
+MOVFW ADRESL
+
+BANKSEL PORTD
+MOVWF Temp
+
+
+
+BSF Select, RS
+MOVFW Temp
+ADDLW 0x30
+CALL send
+
+
+loop:
+
+
+
+GOTO loop
+
+
+
+
+
+END
+

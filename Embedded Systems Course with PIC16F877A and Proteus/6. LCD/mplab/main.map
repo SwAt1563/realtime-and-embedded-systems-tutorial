@@ -1,0 +1,56 @@
+MPLINK 4.48, Linker
+Linker Map File - Created Tue Mar 21 00:30:59 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0000ba
+      .config_2007_MAIN.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000060      
+                            0x002007    0x002007      
+            97 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      ISR   0x000014    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                     inid   0x00003f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                     init   0x000005    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                     loop   0x00005d    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                    loop1   0x000021    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    loopX   0x000026    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    onems   0x00001f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                   pulseE   0x00002a    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                     send   0x00002f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    start   0x00005a    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                      xms   0x000025    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     init   0x000005    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                      ISR   0x000014    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                    onems   0x00001f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    loop1   0x000021    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                      xms   0x000025    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    loopX   0x000026    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                   pulseE   0x00002a    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                     send   0x00002f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                     inid   0x00003f    program     static C:\Users\swata\OneDrive\Desktop\mplab\LCDIS_PORTD.INC
+                    start   0x00005a    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+                     loop   0x00005d    program     static C:\Users\swata\OneDrive\Desktop\mplab\main.asm
+
+

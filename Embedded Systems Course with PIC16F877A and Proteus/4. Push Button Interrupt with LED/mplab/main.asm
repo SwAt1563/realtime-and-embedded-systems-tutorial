@@ -1,0 +1,98 @@
+
+PROCESSOR 16F877A
+INCLUDE "P16F877A.INC"	
+
+
+__CONFIG 0x3731
+
+; The instructions should start from here
+ORG 0x00
+GOTO init
+
+
+ORG 0x04
+GOTO ISR
+
+
+
+; When intruput happend the program will enter here
+ISR:
+
+BANKSEL INTCON
+BCF INTCON, INTF
+BCF INTCON, INTE
+
+; THE TASK WHEN INT.
+
+BANKSEL PORTD
+
+BTFSS PORTD, RD2
+GOTO LED_TURN_ON ; WHEN RD2: 0
+
+GOTO LED_TURN_OFF; WHEN RD2: 1
+
+BACK:
+
+
+
+
+BANKSEL INTCON
+BSF INTCON, INTE
+
+BANKSEL PORTD
+retfie
+
+
+
+
+
+; The init for our program
+init:
+
+BANKSEL TRISB
+BSF TRISB, TRISB0
+BCF TRISD, TRISD2
+
+BANKSEL INTCON 
+
+BSF INTCON, GIE
+BSF INTCON, INTE
+
+
+
+GOTO start
+
+; The main code for our program
+start:
+
+BANKSEL PORTD
+BSF PORTD, RD2
+
+
+
+
+loop:
+
+
+GOTO loop
+
+
+LED_TURN_ON:
+
+BANKSEL PORTD
+BSF PORTD, RD2 
+
+GOTO BACK
+
+
+LED_TURN_OFF:
+
+BANKSEL PORTD
+BCF PORTD, RD2 
+
+GOTO BACK
+
+
+
+END
+
