@@ -1,0 +1,11 @@
+gdb
+gdb main
+attach process_id
+l line
+p variable
+next
+step
+continue
+set sleep=0
+set/show follow-fork-mode [parent|child]
+set/show follow-exec-mode [same|new]
